@@ -2,8 +2,6 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-#define INF 999999
-
 /**
 * main - prints the minimum number of coins to make change for an amount
 * @argc: argument count parameter
@@ -24,8 +22,12 @@ int main(int argc, char *argv[])
 
 	num_denom = sizeof(coin_denom) / sizeof(coin_denom[0]);
 
-
-	if (argc == 2)
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	else
 	{
 		if (amount < 0)
 			printf("0\n");
@@ -40,11 +42,6 @@ int main(int argc, char *argv[])
 
 			printf("%d\n", total_coins);
 		}
-	}
-	else if (argc == 1 || argc > 2)
-	{
-		printf("Error\n");
-		return (1);
 	}
 
 	return (0);
