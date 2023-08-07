@@ -18,8 +18,6 @@ int main(int argc, char *argv[])
 
 	int total_coins = 0;
 
-	amount = atoi(argv[1]);
-
 	num_denom = sizeof(coin_denom) / sizeof(coin_denom[0]);
 
 	if (argc != 2)
@@ -27,22 +25,23 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	else
-	{
-		if (amount < 0)
-			printf("0\n");
-		else
-		{
-			for (i = 0; i < num_denom; i++)
-			{
-				num_coins = amount / coin_denom[i];
-				total_coins += num_coins;
-				amount -= num_coins * coin_denom[i];
-			}
 
-			printf("%d\n", total_coins);
-		}
+	amount = atoi(argv[1]);
+
+	if (amount < 0)
+	{
+		printf("0\n");
+		return (1);
 	}
+
+	for (i = 0; i < num_denom; i++)
+	{
+		num_coins = amount / coin_denom[i];
+		total_coins += num_coins;
+		amount -= num_coins * coin_denom[i];
+	}
+
+	printf("%d\n", total_coins);
 
 	return (0);
 }
