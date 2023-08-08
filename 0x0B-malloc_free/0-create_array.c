@@ -22,5 +22,8 @@ char *create_array(unsigned int size, char c)
 		s[i] = _putchar(c);
 	}
 	s[i] = _putchar('\0');
+	
+	if (s == NULL)
+		return (NULL);
 	return (s);
 }
