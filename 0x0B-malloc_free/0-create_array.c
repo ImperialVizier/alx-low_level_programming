@@ -23,8 +23,9 @@ char *create_array(unsigned int size, char c)
 
 	for (i = 0; i < size; i++)
 	{
-		s[i] = c
+		s[i] = _putchar(c);
 	}
-	
+	_putchar('\0');
+	_putchar('\n');
 	return (s);
 }
