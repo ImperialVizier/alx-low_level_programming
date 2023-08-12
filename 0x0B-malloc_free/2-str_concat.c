@@ -38,6 +38,9 @@ char *str_concat(char *s1, char *s2)
 
 	concat[totalLen] = '\0';
 
+	if (concat == NULL)
+		return (NULL);
+
 	return (concat);
 
 
